@@ -7,23 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116FD4EE286E1327008969D8 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FD4ED286E1327008969D8 /* ProgressCollectionViewCell.swift */; };
+		116FD4F128735EF9008969D8 /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FD4F028735EF9008969D8 /* HabitCollectionViewCell.swift */; };
+		116FD4F328748EB8008969D8 /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FD4F228748EB8008969D8 /* HabitDetailsViewController.swift */; };
 		118AA73A286A322A00F4236E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AA739286A322A00F4236E /* AppDelegate.swift */; };
 		118AA73C286A322A00F4236E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AA73B286A322A00F4236E /* SceneDelegate.swift */; };
-		118AA73E286A322A00F4236E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AA73D286A322A00F4236E /* ViewController.swift */; };
 		118AA741286A322A00F4236E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118AA73F286A322A00F4236E /* Main.storyboard */; };
 		118AA743286A322A00F4236E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 118AA742286A322A00F4236E /* Assets.xcassets */; };
 		118AA746286A322A00F4236E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118AA744286A322A00F4236E /* LaunchScreen.storyboard */; };
+		118AA74E286A389B00F4236E /*  HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AA74D286A389B00F4236E /*  HabitsStore.swift */; };
+		118AA750286B516C00F4236E /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AA74F286B516C00F4236E /* HabitsViewController.swift */; };
+		118AA752286B518100F4236E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AA751286B518100F4236E /* InfoViewController.swift */; };
+		118AA754286B81E500F4236E /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AA753286B81E500F4236E /* HabitViewController.swift */; };
+		11A3B9232885C27300B667C5 /* RedactorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A3B9222885C27300B667C5 /* RedactorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		116FD4ED286E1327008969D8 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
+		116FD4F028735EF9008969D8 /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
+		116FD4F228748EB8008969D8 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
 		118AA736286A322A00F4236E /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118AA739286A322A00F4236E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		118AA73B286A322A00F4236E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		118AA73D286A322A00F4236E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		118AA740286A322A00F4236E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		118AA742286A322A00F4236E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		118AA745286A322A00F4236E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		118AA747286A322A00F4236E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		118AA74D286A389B00F4236E /*  HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " HabitsStore.swift"; sourceTree = "<group>"; };
+		118AA74F286B516C00F4236E /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		118AA751286B518100F4236E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		118AA753286B81E500F4236E /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
+		11A3B9222885C27300B667C5 /* RedactorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +51,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		116FD4EC286D56B3008969D8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				118AA74F286B516C00F4236E /* HabitsViewController.swift */,
+				118AA753286B81E500F4236E /* HabitViewController.swift */,
+				118AA751286B518100F4236E /* InfoViewController.swift */,
+				116FD4F228748EB8008969D8 /* HabitDetailsViewController.swift */,
+				11A3B9222885C27300B667C5 /* RedactorViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		116FD4EF286E1349008969D8 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				116FD4ED286E1327008969D8 /* ProgressCollectionViewCell.swift */,
+				116FD4F028735EF9008969D8 /* HabitCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		118AA72D286A322A00F4236E = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +93,9 @@
 			children = (
 				118AA739286A322A00F4236E /* AppDelegate.swift */,
 				118AA73B286A322A00F4236E /* SceneDelegate.swift */,
-				118AA73D286A322A00F4236E /* ViewController.swift */,
+				118AA74D286A389B00F4236E /*  HabitsStore.swift */,
+				116FD4EC286D56B3008969D8 /* ViewControllers */,
+				116FD4EF286E1349008969D8 /* CollectionViewCell */,
 				118AA73F286A322A00F4236E /* Main.storyboard */,
 				118AA742286A322A00F4236E /* Assets.xcassets */,
 				118AA744286A322A00F4236E /* LaunchScreen.storyboard */,
@@ -138,9 +175,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				118AA73E286A322A00F4236E /* ViewController.swift in Sources */,
+				118AA74E286A389B00F4236E /*  HabitsStore.swift in Sources */,
+				118AA754286B81E500F4236E /* HabitViewController.swift in Sources */,
 				118AA73A286A322A00F4236E /* AppDelegate.swift in Sources */,
+				116FD4EE286E1327008969D8 /* ProgressCollectionViewCell.swift in Sources */,
 				118AA73C286A322A00F4236E /* SceneDelegate.swift in Sources */,
+				118AA750286B516C00F4236E /* HabitsViewController.swift in Sources */,
+				118AA752286B518100F4236E /* InfoViewController.swift in Sources */,
+				116FD4F328748EB8008969D8 /* HabitDetailsViewController.swift in Sources */,
+				11A3B9232885C27300B667C5 /* RedactorViewController.swift in Sources */,
+				116FD4F128735EF9008969D8 /* HabitCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +333,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z987B24FTD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyHabits/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -316,6 +361,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z987B24FTD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyHabits/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
