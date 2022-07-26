@@ -20,37 +20,23 @@ class HabitDetailsViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
         
-        
     }()
-    
-    init(_ habit: Habit) {
-            self.habit = habit
-            super.init(nibName: nil, bundle: nil)
-        }
-
-        required init?(coder: NSCoder) {
-            super.init(coder: coder)
-        }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         
-      
+        tableView.reloadData()
         setConstraints()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        tableView.reloadData()
         navigationController?.navigationBar.prefersLargeTitles = false
-      
+        
     }
-    
-    
     
     func setConstraints() {
         
@@ -64,16 +50,25 @@ class HabitDetailsViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             
         ])
-        
     }
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showRedactor" {
+            let destinationNavController = segue.destination as? UINavigationController
+            let destinationRedactorVC = destinationNavController?.viewControllers.first as? RedactorViewController
+            destinationRedactorVC?.delegete = self
+            
+            destinationRedactorVC?.nameTextField.text = habit?.name
+            destinationRedactorVC?.colorView.backgroundColor = habit?.color
+            destinationRedactorVC?.datePicker.date = habit!.date
+            destinationRedactorVC?.isHabit = habit
+            
+        }
+    }
 }
 
-
 extension HabitDetailsViewController:  UITableViewDataSource, UITableViewDelegate {
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return HabitsStore.shared.dates.count
@@ -86,35 +81,28 @@ extension HabitDetailsViewController:  UITableViewDataSource, UITableViewDelegat
         formatter.dateFormat = "ru Ru"
         cell.textLabel?.text = HabitsStore.shared.trackDateString(forIndex: indexPath.row)
         
-
-//        if let isHabit = habit {
-//
-//                   if HabitsStore.shared.habit(isHabit, isTrackedIn: HabitsStore.shared.dates[HabitsStore.shared.dates.count - indexPath.row - 1]) {
-//
-//                       cell.accessoryType = .checkmark
-//                       cell.tintColor = UIColor(named: "Purple")
-//
-//                   }
-//               }
         if let habit = habit {
             let date = HabitsStore.shared.dates[indexPath.row]
-            HabitsStore.shared.habit(habit, isTrackedIn: date)
+            if HabitsStore.shared.habit(habit, isTrackedIn: date) {
+                cell.accessoryType = .checkmark
+            }
         }
-
-      
-        
-        
-        
-        
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         "Активность"
     }
-    
 }
 
-
+extension HabitDetailsViewController: RedacrorViewDelegete {
+    
+    func notify() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func habitTitleChanged(to title: String?) {
+        self.title = title
+    }
+}
 

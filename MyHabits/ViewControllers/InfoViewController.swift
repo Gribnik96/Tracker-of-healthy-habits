@@ -9,7 +9,7 @@ import UIKit
 
 class InfoViewController: UIViewController {
     
-    var scrollView: UIScrollView = {
+    private var scrollView: UIScrollView = {
         
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -17,8 +17,8 @@ class InfoViewController: UIViewController {
         
     }()
     
-    var labelTitle: UILabel = {
-       
+    private var labelTitle: UILabel = {
+        
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.text = "Привычка за 21 день"
@@ -27,9 +27,8 @@ class InfoViewController: UIViewController {
         
     }()
     
-    
-    var label: UILabel = {
-       
+    private var label: UILabel = {
+        
         let label = UILabel()
         label.text =
         
@@ -47,7 +46,7 @@ class InfoViewController: UIViewController {
         
         4. Поздравить себя с прохождением первого серьезного порога в 21 день.
         За это время отказ от дурных наклонностей уже примет форму осознанного преодоления и человек сможет больше работать в сторону принятия положительных качеств.
-
+        
         5. Держать планку 40 дней. Практикующий методику уже чувствует себя освободившимся от прошлого негатива и двигается в нужном направлении с хорошей динамикой.
         
         6. На 90-й день соблюдения техники все лишнее из «прошлой жизни» перестает напоминать о себе, и человек, оглянувшись назад, осознает себя полностью обновившимся.
@@ -66,7 +65,7 @@ class InfoViewController: UIViewController {
         self.title = "Информация"
         
         setConstraint()
-       
+        
     }
     
     func  setConstraint() {
@@ -76,7 +75,7 @@ class InfoViewController: UIViewController {
         scrollView.addSubview(labelTitle)
         
         NSLayoutConstraint.activate([
-        
+            
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),

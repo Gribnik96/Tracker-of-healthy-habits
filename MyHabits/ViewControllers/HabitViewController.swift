@@ -11,7 +11,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     
     var habit: Habit?
     
-    var nameLabel: UILabel = {
+    private  var nameLabel: UILabel = {
         
         let  label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .bold)
@@ -21,7 +21,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         
     }()
     
-  lazy  var nameTextField: UITextField = {
+    lazy  var nameTextField: UITextField = {
         
         let textField = UITextField()
         textField.font = .systemFont(ofSize: 17)
@@ -33,7 +33,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         
     }()
     
-    var colorLabel: UILabel = {
+    private var colorLabel: UILabel = {
         
         let  label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .bold)
@@ -66,8 +66,6 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         
     }()
     
-    
-    
     var contentLabel: UILabel = {
         
         let formatter = DateFormatter()
@@ -93,10 +91,9 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         colorText(date: datePicker)
         setConstraints()
-        
         
     }
     
@@ -143,12 +140,13 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
-        let main_string = "Каждый день в \(formatter.string(from: date.date))"
-        let string_to_color = "\(formatter.string(from: date.date))"
-        let range = (main_string as NSString).range(of: string_to_color)
-        let attribute = NSMutableAttributedString.init(string: main_string)
+        let mainString = "Каждый день в \(formatter.string(from: date.date))"
+        let stringToColor = "\(formatter.string(from: date.date))"
+        let range = (mainString as NSString).range(of: stringToColor)
+        let attribute = NSMutableAttributedString.init(string: mainString)
         attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 161/255, green: 22/255, blue: 204/255, alpha: 1) , range: range)
         contentLabel.attributedText = attribute
+        
     }
     
     @objc func setTime(date: UIDatePicker) {
@@ -159,49 +157,47 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         colorText(date: date)
         
     }
-  
+    
     @objc func setColor() {
         
         let colorPicker = UIColorPickerViewController()
         colorPicker.delegate = self
         present(colorPicker, animated: true, completion: nil)
-    
+        
     }
     
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        
         let color = viewController.selectedColor
         colorView.backgroundColor = color
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         self.view.endEditing(true)
         return false
+        
     }
     
     @IBAction func close(_ sender: Any) {
+        
         navigationController?.popViewController(animated: true)
-
         dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func saveHabit(_ sender: Any) {
-        
         
         let newHabit = Habit(name: nameTextField.text ?? "Error",
                              date:  datePicker.date,
                              color: colorView.backgroundColor!)
         let store = HabitsStore.shared
-     
-            
-            store.habits.append(newHabit)
-           
-        
-        
+        store.habits.append(newHabit)
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
+        
     }
-    
-    
 }
 
 

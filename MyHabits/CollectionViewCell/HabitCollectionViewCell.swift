@@ -15,8 +15,6 @@ class HabitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
     var nameLabel: UILabel = {
         
         let label = UILabel()
-        //   label.text = "Выпить стакан воды"
-        // label.textColor = Habit.c
         label.numberOfLines = 2
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +25,6 @@ class HabitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
     var timeLabel: UILabel = {
         
         let label = UILabel()
-        //label.text = "Каждый день в 7:30"
         label.font = .systemFont(ofSize: 12)
         label.textColor = .systemGray2
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -50,8 +47,6 @@ class HabitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
     var imageView: UIImageView = {
         
         let imageView = UIImageView()
-        //   imageView.image = UIImage(systemName: "checkmark.circle")
-    //    imageView.layer.borderWidth = 2
         imageView.frame.size.width = 38
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
         imageView.isUserInteractionEnabled = true
@@ -105,56 +100,42 @@ class HabitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
             imageView.heightAnchor.constraint(equalToConstant: 38)
             
         ])
-        
-        
     }
     
-    
-    
-    
-    
     @objc func clickHabitGesture(gesture: UITapGestureRecognizer) {
-        
         
         imageView.image = UIImage.init(systemName: "checkmark.circle.fill")
         
         if habit?.isAlreadyTakenToday == false {
-                    
-                    HabitsStore.shared.track(habit!)
-            
+            HabitsStore.shared.track(habit!)
+        } else {
+            imageView.image = UIImage.init(systemName: "circle")
         }
-        
     }
+    
+    func setInf(_ habit: Habit?) {
         
+        self.habit = habit
+        nameLabel.text = habit?.name
+        timeLabel.text = habit?.dateString
+        imageView.tintColor = habit?.color
+        amountLabel.text = "Счетчик: \(habit?.trackDates.count ?? 0)"
+        nameLabel.textColor = habit?.color
         
-        
-        func setInf(_ habit: Habit?) {
+        if habit?.isAlreadyTakenToday == true {
             
-            nameLabel.text = habit?.name
-            timeLabel.text = habit?.dateString
-            //   imageView.backgroundColor = habit?.color
-            //imageView.layer.borderColor = habit?.color.cgColor
-            imageView.tintColor = habit?.color
-            amountLabel.text = "Счетчик: \(habit?.trackDates.count ?? 0)"
-            nameLabel.textColor = habit?.color
-            
-            if habit?.isAlreadyTakenToday == true {
-                            
-                            imageView.image = UIImage.init(systemName: "checkmark.circle.fill")
-                        } else {
-                            imageView.image = UIImage.init(systemName: "circle")
-                            
-                        }
+            imageView.image = UIImage.init(systemName: "checkmark.circle.fill")
+        } else {
+            imageView.image = UIImage.init(systemName: "circle")
             
         }
-        
-        
+    }
 }
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+

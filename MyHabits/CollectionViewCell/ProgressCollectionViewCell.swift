@@ -10,13 +10,10 @@ import UIKit
 class ProgressCollectionViewCell: UICollectionViewCell {
     
     var progress: Float? {
-           
-           didSet {
-               
-               progressView.progress = progress ?? 0
-               
-           }
-       }
+        didSet {
+            progressView.progress = progress ?? 0
+        }
+    }
     
     var label: UILabel = {
         
@@ -41,18 +38,15 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     var progressView: UIProgressView = {
         
         let progressView = UIProgressView()
-        progressView.progressTintColor = UIColor(named: "Purple")
+        progressView.progressTintColor = UIColor(red: 0.631, green: 0.086, blue: 0.8, alpha: 1)
         progressView.translatesAutoresizingMaskIntoConstraints = false
-        
         return progressView
-        
         
     }()
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         
         setConstraints()
         labelProgess.text = "\(Int(progressView.progress * 100))%"
@@ -70,32 +64,25 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(progressView)
         
         NSLayoutConstraint.activate([
-        
+            
             label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
             
             labelProgess.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             labelProgess.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
-        
+            
             progressView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 15),
             progressView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
             progressView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
             progressView.heightAnchor.constraint(equalToConstant: 7),
             progressView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
             
-            
-            
         ])
-        
-        
     }
-    
     
     func setProgress(habit: Habit) {
         
         progressView.progress = HabitsStore.shared.todayProgress
         
     }
-    
-    
 }

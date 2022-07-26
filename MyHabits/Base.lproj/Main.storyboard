@@ -234,6 +234,7 @@
         <!--Править-->
         <scene sceneID="96p-BG-VXU">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbv-Qc-Mrc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w8Y-zO-7oI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Править" id="mDU-1Q-1Sj"/>
@@ -246,7 +247,6 @@
                         <segue destination="yh2-e8-0UF" kind="relationship" relationship="rootViewController" id="onp-Jb-kdR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bbv-Qc-Mrc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4555" y="151"/>
         </scene>
