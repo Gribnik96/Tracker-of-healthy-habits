@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol HabitCollectionViewCellDelegate {
+    
+    func updateData()
+    
+}
+
 class HabitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
+    var delegate: HabitCollectionViewCellDelegate?
     
     var habit: Habit?
     
-    var nameLabel: UILabel = {
+    private var nameLabel: UILabel = {
         
         let label = UILabel()
         label.numberOfLines = 2
@@ -22,7 +29,7 @@ class HabitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
         
     }()
     
-    var timeLabel: UILabel = {
+    private var timeLabel: UILabel = {
         
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
@@ -32,7 +39,7 @@ class HabitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
         
     }()
     
-    var amountLabel: UILabel = {
+    private var amountLabel: UILabel = {
         
         let label = UILabel()
         label.text = "Счетчик:"
@@ -44,7 +51,7 @@ class HabitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
         
     }()
     
-    var imageView: UIImageView = {
+    private var imageView: UIImageView = {
         
         let imageView = UIImageView()
         imageView.frame.size.width = 38
@@ -74,7 +81,7 @@ class HabitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
     }
     
     
-    func setConstraints() {
+   private func setConstraints() {
         
         contentView.addSubview(nameLabel)
         contentView.addSubview(timeLabel)
@@ -104,13 +111,16 @@ class HabitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
     
     @objc func clickHabitGesture(gesture: UITapGestureRecognizer) {
         
-        imageView.image = UIImage.init(systemName: "checkmark.circle.fill")
-        
         if habit?.isAlreadyTakenToday == false {
             HabitsStore.shared.track(habit!)
+            delegate?.updateData()
         } else {
-            imageView.image = UIImage.init(systemName: "circle")
+            HabitsStore.shared.untrack(habit!)
+            delegate?.updateData()
         }
+        
+        
+        print("enter")
     }
     
     func setInf(_ habit: Habit?) {
@@ -123,7 +133,6 @@ class HabitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate
         nameLabel.textColor = habit?.color
         
         if habit?.isAlreadyTakenToday == true {
-            
             imageView.image = UIImage.init(systemName: "checkmark.circle.fill")
         } else {
             imageView.image = UIImage.init(systemName: "circle")

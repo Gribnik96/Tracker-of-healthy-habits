@@ -15,7 +15,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    var label: UILabel = {
+    private var label: UILabel = {
         
         let label = UILabel()
         label.text = "Все получится!"
@@ -35,7 +35,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         
     }()
     
-    var progressView: UIProgressView = {
+    private var progressView: UIProgressView = {
         
         let progressView = UIProgressView()
         progressView.progressTintColor = UIColor(red: 0.631, green: 0.086, blue: 0.8, alpha: 1)
@@ -57,7 +57,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setConstraints() {
+   private func setConstraints() {
         
         contentView.addSubview(label)
         contentView.addSubview(labelProgess)

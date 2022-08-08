@@ -56,7 +56,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         
     }()
     
-    var timeLabel: UILabel = {
+    private var timeLabel: UILabel = {
         
         let  label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .bold)
@@ -66,7 +66,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         
     }()
     
-    var contentLabel: UILabel = {
+    private var contentLabel: UILabel = {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"

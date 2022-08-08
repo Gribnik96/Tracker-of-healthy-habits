@@ -20,7 +20,7 @@ class RedactorViewController: HabitViewController {
     
     var isHabit: Habit?
     
-    let deleteButton: UIButton = {
+   private let deleteButton: UIButton = {
         
         let delete = UIButton()
         delete.tintColor = .red
@@ -34,6 +34,8 @@ class RedactorViewController: HabitViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         view.addSubview(deleteButton)
         
