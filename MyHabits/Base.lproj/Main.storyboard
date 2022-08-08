@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1x-hW-UMk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1903" y="370"/>
+            <point key="canvasLocation" x="1799" y="370"/>
         </scene>
         <!--Habit Details View Controller-->
         <scene sceneID="L6i-Tw-nrW">
@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5N-LG-EsB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5646" y="151"/>
+            <point key="canvasLocation" x="4709" y="-70"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pMW-u3-Dp6">
@@ -234,7 +234,6 @@
         <!--Править-->
         <scene sceneID="96p-BG-VXU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bbv-Qc-Mrc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w8Y-zO-7oI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Править" id="mDU-1Q-1Sj"/>
@@ -247,8 +246,9 @@
                         <segue destination="yh2-e8-0UF" kind="relationship" relationship="rootViewController" id="onp-Jb-kdR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbv-Qc-Mrc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4555" y="151"/>
+            <point key="canvasLocation" x="3874" y="-70"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.63137254899999995" green="0.086274509799999996" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

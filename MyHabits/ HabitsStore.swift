@@ -160,6 +160,11 @@ public final class HabitsStore {
         save()
     }
     
+    public func untrack(_ habit: Habit) {
+        habit.trackDates.removeLast()
+        save()
+    }
+    
     /// Возвращает отформатированное время для даты.
     /// - Parameter index: Индекс в массиве dates.
     public func trackDateString(forIndex index: Int) -> String? {

@@ -11,7 +11,7 @@ class HabitDetailsViewController: UIViewController {
     
     var habit: Habit?
     
-    lazy var tableView: UITableView = {
+   private lazy var tableView: UITableView = {
         
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.dataSource = self
@@ -38,7 +38,7 @@ class HabitDetailsViewController: UIViewController {
         
     }
     
-    func setConstraints() {
+   private func setConstraints() {
         
         view.addSubview(tableView)
         
@@ -98,7 +98,9 @@ extension HabitDetailsViewController:  UITableViewDataSource, UITableViewDelegat
 extension HabitDetailsViewController: RedacrorViewDelegete {
     
     func notify() {
-        navigationController?.popToRootViewController(animated: true)
+        
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     func habitTitleChanged(to title: String?) {

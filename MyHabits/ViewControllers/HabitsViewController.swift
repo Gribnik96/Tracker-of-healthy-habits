@@ -9,19 +9,14 @@ import UIKit
 
 class HabitsViewController: UIViewController {
     
-    private var layot: UICollectionViewFlowLayout = {
+    private lazy var collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 22, left: 16, bottom: 0, right: 16)
         layout.scrollDirection = .vertical
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        return layout
         
-    }()
-    
-    private lazy var collectionView: UICollectionView = {
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layot)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(ProgressCollectionViewCell.self,
                                 forCellWithReuseIdentifier: "MyCell")
         collectionView.register(HabitCollectionViewCell.self, forCellWithReuseIdentifier: "HabitCell")
@@ -49,9 +44,10 @@ class HabitsViewController: UIViewController {
         
         collectionView.reloadData()
         navigationController?.navigationBar.prefersLargeTitles = true
+        updateData()
         
     }
-    
+   
     private func setConstraints() {
         
         view.addSubview(collectionView)
@@ -87,6 +83,7 @@ extension HabitsViewController: UICollectionViewDataSource, UICollectionViewDele
             habitCell.layer.cornerRadius = 6
             habitCell.clipsToBounds = true
             habitCell.backgroundColor = .white
+            habitCell.delegate = self
             
             let article = HabitsStore.shared.habits[indexPath.row]
             habitCell.setInf(article)
@@ -156,6 +153,12 @@ extension HabitsViewController: UICollectionViewDataSource, UICollectionViewDele
     }
 }
 
+extension HabitsViewController: HabitCollectionViewCellDelegate {
+    
+    func updateData() {
+        collectionView.reloadData()
+    }
+}
 
 
 

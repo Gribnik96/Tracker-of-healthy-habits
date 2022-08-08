@@ -68,7 +68,7 @@ class InfoViewController: UIViewController {
         
     }
     
-    func  setConstraint() {
+    private func  setConstraint() {
         
         view.addSubview(scrollView)
         scrollView.addSubview(label)
